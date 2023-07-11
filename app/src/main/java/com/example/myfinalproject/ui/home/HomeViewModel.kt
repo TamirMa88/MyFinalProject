@@ -4,13 +4,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.myfinalproject.db.ArticleDatabase
 import kotlinx.coroutines.launch
-import com.example.myfinalproject.network.NewService
 import com.example.myfinalproject.models.Article
 import com.example.myfinalproject.repository.NewsRepository
+import com.example.myfinalproject.ui.ViewModelInterface
+import kotlinx.coroutines.Dispatchers
 
-class HomeViewModel(val newsRepository: NewsRepository) : ViewModel() {
+class HomeViewModel(private val newsRepository: NewsRepository) : ViewModel(), ViewModelInterface {
 
     // val news : List<Article> = NewService.create().techNews().articles
 
@@ -18,8 +18,14 @@ class HomeViewModel(val newsRepository: NewsRepository) : ViewModel() {
     val news: LiveData<List<Article>> = _news
 
     init {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             _news.postValue(newsRepository.getNews())
         }
+    }
+    override fun saveArticle(article: Article) = viewModelScope.launch {
+        newsRepository.upsert(article)
+    }
+    override fun deleteArticle(article: Article) = viewModelScope.launch {
+        newsRepository.deleteArticle(article)
     }
 }

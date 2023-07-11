@@ -8,18 +8,29 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.myfinalproject.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:label="Top News"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_world_wide"
+            app:destination="@id/world_wide" />
+
+    </fragment>
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.myfinalproject.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/world_wide"
+        android:name="com.example.myfinalproject.ui.worldwidenews.WorldWideNewsFragment"
+        android:label="US Tech News"
+        tools:layout="@layout/fragment_worldwide" />
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.myfinalproject.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="Israel-Tech News"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/saved_news"
+        android:name="com.example.myfinalproject.ui.saved.SavedFragment"
+        android:label="@string/saved_news"
+        tools:layout="@layout/fragment_saved_news" />
+
 </navigation>

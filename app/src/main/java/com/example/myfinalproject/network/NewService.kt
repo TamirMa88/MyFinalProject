@@ -13,6 +13,12 @@ interface NewService {
     @GET("v2/top-headlines?country=il&category=technology")
     suspend fun techNews(): NewsRespone
 
+    @GET("v2/top-headlines?country=us&category=technology")
+    suspend fun news(): NewsRespone
+
+    @GET("v2/top-headlines?country=us&category=general")
+    suspend fun newsWorldWide(): NewsRespone
+
 
     companion object {
         private const val BASE_URL = "https://newsapi.org/"

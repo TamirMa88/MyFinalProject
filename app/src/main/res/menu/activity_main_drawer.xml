@@ -7,14 +7,18 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
+            android:title="@string/top_news" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/world_wide"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:title="US Tech News" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:icon="@drawable/ic_laptop"
+            android:title="@string/tech_news" />
+        <item
+            android:id="@+id/saved_news"
+            android:icon="@drawable/ic_saved"
+            android:title="@string/saved_news" />
     </group>
 </menu>
