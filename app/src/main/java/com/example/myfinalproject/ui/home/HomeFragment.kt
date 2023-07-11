@@ -9,14 +9,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myfinalproject.adapters.NewsAdapter
-import com.example.myfinalproject.databinding.FragmentTechNewsBinding
+import com.example.myfinalproject.databinding.FragmentHomeBinding
 import com.example.myfinalproject.db.ArticleDatabase
 import com.example.myfinalproject.repository.NewsRepository
 
 
 class HomeFragment : Fragment() {
 
-    private var _binding: FragmentTechNewsBinding? = null
+    private var _binding: FragmentHomeBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -28,7 +28,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentTechNewsBinding.inflate(inflater, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
         val newsRepository = NewsRepository(ArticleDatabase(requireContext()))
         val viewModelProviderFactory = HomeViewModelProviderFactory(newsRepository)
@@ -39,11 +39,12 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.rvTechNews.layoutManager=LinearLayoutManager(requireContext())
+        binding.rvNews.layoutManager = LinearLayoutManager(requireContext())
 
         homeViewModel.news.observe(viewLifecycleOwner) {
-            binding.rvTechNews.adapter = NewsAdapter(it)
+            binding.rvNews.adapter = NewsAdapter(it, requireContext(),homeViewModel)
         }
+
     }
 
 
@@ -51,5 +52,6 @@ class HomeFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-}
 
+
+}

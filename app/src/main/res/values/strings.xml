@@ -2,7 +2,7 @@
     <string name="app_name">myFinalProject</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_title">World News App</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
@@ -11,4 +11,12 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="pic">pic</string>
+    <string name="top_news">Top News</string>
+    <string name="world_wide_news">World Wide News</string>
+    <string name="tech_news">Tech News</string>
+    <string name="saved_news">Saved news</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="more_details">More Details</string>
+    <string name="url_link">לאתר הכתבה</string>
 </resources>

@@ -7,6 +7,7 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.example.myfinalproject.models.Article
 
+
 @Database(
     entities = [Article::class],
     version = 1
